@@ -1,0 +1,8 @@
+// Shared build settings. Personal values go in Config/Local.xcconfig (git-ignored).
+// Copy Config/Local.example.xcconfig to Config/Local.xcconfig and fill it in.
+
+SUMMIT_TEAM_ID =
+SUPABASE_URL =
+SUPABASE_ANON_KEY =
+
+#include? "Local.xcconfig"
