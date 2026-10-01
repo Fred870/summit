@@ -14,7 +14,7 @@ Race your friends up a real mountain using the stairs you climb in real life, an
 - **Checkpoints are camps:** Base Camp → Camp 1…4 → Summit, the same naming on every mountain.
 - **Friends:** a persistent friend list, and races are started from that list. No public matchmaking.
 - **Items:** found along the route. Climbing more means finding more items.
-- **Gear:** cosmetic **plus small gameplay effects**.
+- **Gear:** moved to v2 (decided 1 Oct).
 - **Must-haves in the SLC:** push notifications for sabotage and overtakes, a home-screen widget, and a summit celebration with a shareable card.
 - **Monetization:** free, with no in-app purchases in the SLC.
 - **Data:** Apple Health Flights Climbed only, from iPhone and Apple Watch (see research doc).
@@ -34,7 +34,7 @@ Race your friends up a real mountain using the stairs you climb in real life, an
 | Camp 4 (9th Station) | ~3,600 m | ~430 |
 | Summit | 3,776 m | ~490 |
 
-- Real-station gaps are uneven (Camp 1 comes very early). We may even out the camp heights for game feel; see open questions.
+- **Decided 1 Oct: keep the real station heights.** The uneven gaps (Camp 1 comes very early) are part of Fuji's character.
 - Pace check: the winner decides the length. A climber doing 30 flights a day finishes in ~16 days, 20 a day in ~25 days, and 10 a day in ~49 days.
 - ⚠️ `design.md` mockups still use a sea-level start (1,259 flights, "Day X of 30", "5th Station" milestone). They need to be updated to Base Camp → Summit, camps, and no fixed day count.
 
@@ -58,23 +58,12 @@ Race your friends up a real mountain using the stairs you climb in real life, an
 ## Climber (avatar)
 - Simple builder at onboarding: body shape, skin tone, hair, face, and jacket colour. It should be quick and charming, not a character-creator rabbit hole.
 - The climber replaces the initial circles in Trail Cam and Ridge, so friends see *your* climber on the slope.
-- Gear appears on the climber visibly, so you can see a friend's crampons and helmet.
 
-## Gear (cosmetic + small effects)
-Proposal: gear unlocks at **lifetime altitude milestones** (since there are no coins or IAP). You equip up to one item per slot.
-
-| Slot | Example | Effect (small) |
-|---|---|---|
-| Head | Helmet | Blocks the first Boulder that hits you in each race |
-| Feet | Crampons | Immune to Ice Patch |
-| Back | Big backpack | Hold 2 items instead of 1 |
-| Hands | Trekking poles | Slightly higher item-drop chance |
-| Style | Jackets, hats, flags | Cosmetic only |
-
-Balancing rule: an effect can never be worth more than a few flights. Real climbing always wins.
+## Gear
+Moved to v2 (decided 1 Oct). Earlier idea: gear unlocked by lifetime altitude, cosmetic plus small effects (helmet, crampons, backpack, poles).
 
 ## Items (found along the route)
-Rules: items affect **virtual** progress only, never your Health data. The server resolves them so they're fair and can't be cheated. You can hold 1 item (2 with a backpack). All numbers are starting values to tune in playtests.
+Rules: items affect **virtual** progress only, never your Health data. The server resolves them so they're fair and can't be cheated. You can hold 1 item. All numbers are starting values to tune in playtests.
 
 **Core items (1 Oct 2026, Caius):**
 
@@ -97,6 +86,10 @@ Rules: items affect **virtual** progress only, never your Health data. The serve
 | Fog | Tactic | Target can't see the leaderboard for 12 h |
 
 Drop chance can lean slightly toward whoever is behind. Keep that subtle.
+
+**Targeting and the final push (decided 1 Oct):**
+- You can throw at **anyone** in the race, not just the climbers next to you.
+- Climbers who have **summited are safe**: nothing can hit them, and their signs no longer catch anyone. Everyone still climbing keeps playing during the 3-day final push.
 
 ## Friends & social
 - Friend list: add by username, invite link, or QR code. Sign in with Apple.
@@ -132,13 +125,9 @@ Drop chance can lean slightly toward whoever is behind. Keep that subtle.
 - **Road to V1:** foundation ✅ → accounts & friends → races → items → catch-up replay & moments → art pass → Ridge, widget, push → TestFlight (see the repo README).
 
 ## Not in the SLC (later)
-More mountains, gym data (StairMaster/treadmill), Apple Watch app, public races, IAP and monetization, chat, Android, co-op expeditions, and seasons or leagues.
+Gear, more mountains, gym data (StairMaster/treadmill), Apple Watch app, public races, IAP and monetization, chat, Android, co-op expeditions, and seasons or leagues.
 
 ## Open questions
-- Camp heights: follow Fuji's real stations, or even them out (e.g. about every 100 flights)?
-- Items in the final push: can the others still throw at each other, and can anyone throw at a climber who has already summited? (Proposal: summited climbers are safe, and the rest keep playing.)
-- How is gear unlocked: lifetime altitude (proposed), race placements, or finding it on the route?
-- Final values for Snowball (X flights), Shortcut sign (X flights detour) and Chocolate bar (1.5× for 6 h, check against the balancing rule: 30 flights in that window = +15); and whether Boulder, Ice Patch and Fog stay.
+- Final values for Snowball (X flights), Shortcut sign (X flights detour) and Chocolate bar (1.5× for 6 h, check against the balancing rule: 30 flights in that window = +15); and whether Boulder and Fog stay (Ice Patch needed crampons, so it goes with gear to v2).
 - Shortcut sign: can you place it anywhere, or not right in front of a camp? Can several signs stack on the same stretch?
-- Can you throw at anyone in the race, or only the person just ahead or behind?
 - Visual style, brand, and app icon (see `design.md`).
