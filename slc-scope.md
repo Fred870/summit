@@ -122,7 +122,14 @@ Drop chance can lean slightly toward whoever is behind. Keep that subtle.
 ## Tech notes
 - HealthKit `flightsClimbed` with a cumulative-sum statistics query. Ignore user-entered samples, and accept only iPhone and Apple Watch sources.
 - Background delivery is best-effort, so sync on app open, from the widget, and on push. Needs a clear rule for when a flight "counts" in a race, most importantly for who summited first and for the end of the 3-day window. Proposal: flights count by the time they were climbed (the sample timestamp), not by sync time, with a short grace period after the window closes for late syncs.
-- A backend is required for the friend graph, races, item resolution (including where shortcut signs sit and who triggers them), race-state timers, and push (APNs). Choose one (Supabase, Firebase, or CloudKit plus a server).
+- A backend is required for the friend graph, races, item resolution (including where shortcut signs sit and who triggers them), race-state timers, and push (APNs).
+
+## Build setup (1 Oct 2026)
+- **Repo:** the Summit folder is the git repo (`main`, first commit 1 Oct). Local only for now; GitHub later.
+- **Project:** XcodeGen (`project.yml`) → app, widget, unit tests. iOS 18+, iPhone only, English only. Bundle ID `app.summitclimb.ios`, App Group `group.app.summitclimb.ios`.
+- **Backend:** Supabase. Schema in `supabase/migrations` (profiles, friendships, races, race members, hourly flight buckets, items, shortcut signs, race events) with row-level security; game rules run server-side.
+- **Apple account:** free for now. Push, Sign in with Apple and TestFlight wait for the paid Developer Program, which is needed before friends can install the app. Until then sign-in uses Supabase email codes.
+- **Road to V1:** foundation ✅ → accounts & friends → races → items → catch-up replay & moments → art pass → Ridge, widget, push → TestFlight (see the repo README).
 
 ## Not in the SLC (later)
 More mountains, gym data (StairMaster/treadmill), Apple Watch app, public races, IAP and monetization, chat, Android, co-op expeditions, and seasons or leagues.
