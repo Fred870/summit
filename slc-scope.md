@@ -128,6 +128,6 @@ Drop chance can lean slightly toward whoever is behind. Keep that subtle.
 Gear, more mountains, gym data (StairMaster/treadmill), Apple Watch app, public races, IAP and monetization, chat, Android, co-op expeditions, and seasons or leagues.
 
 ## Open questions
-- Final values for Snowball (X flights), Shortcut sign (X flights detour) and Chocolate bar (1.5× for 6 h, check against the balancing rule: 30 flights in that window = +15); and whether Boulder and Fog stay (Ice Patch needed crampons, so it goes with gear to v2).
+- Final values for Snowball (X flights), Shortcut sign (X flights detour) and Chocolate bar (1.5× for 6 h, check against the balancing rule: 30 flights in that window = +15); and whether Boulder, Ice Patch and Fog stay.
 - Shortcut sign: can you place it anywhere, or not right in front of a camp? Can several signs stack on the same stretch?
 - Visual style, brand, and app icon (see `design.md`).
